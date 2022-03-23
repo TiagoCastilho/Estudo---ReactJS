@@ -1,6 +1,7 @@
 {
   "name": "react-ex01-criando-form",
   "private": true,
+  "homepage": "react-ex01-criando-form/",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
