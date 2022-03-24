@@ -1,5 +1,7 @@
 {
   "name": "react-ex01-criando-form",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
   "private": true,
   "version": "0.0.0",
   "scripts": {
