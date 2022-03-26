@@ -8,6 +8,6 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 <h3 align="center">Exercício 1 - Criando Formulário Simples</h3>
 <a href="https://tiagocastilho.github.io/Estudo---ReactJS/react-ex01/build/index.html"><p align="center">👉 Acesse a página clicando aqui! 👈</p></a>
 <div align="center">
-<img height="500em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/react-ex01/images/como%20ficou1.png">
+<img height="500em" src="https://raw.githubusercontent.com/TiagoCastilho/Estudo---ReactJS/main/react-ex01/images/como%20ficou1.png">
 </div>
 <hr>
