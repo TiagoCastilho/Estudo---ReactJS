@@ -2,7 +2,7 @@
 Exercícios e Projetos
 <br/>
 <h1 align="center">
-    Exercício 1 - Calculadora de IMC
+    Exercício 2 - Calculadora de IMC
 </h1>
 
 ## Link do Projeto
