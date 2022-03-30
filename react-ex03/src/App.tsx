@@ -17,24 +17,35 @@ const App = () => {
       })
       .then((json) => {
         setMovies(json);
+      })
+      .catch((e) => {
+        setLoading(false);
+        setMovies([]);
+        console.error(e);
       });
   }
   */
   const loadMovies = async () => {
-    setLoading(true);
-    let response = await fetch('https://api.b7web.com.br/cinema/');
-    let json = await response.json();
-    setLoading(false);
-    setMovies(json);
+    try {
+      setLoading(true);
+      let response = await fetch('https://api.b7web.com.br/cinema/');
+      let json = await response.json();
+      setLoading(false);
+      setMovies(json);
+    } catch(e) {
+      setLoading(false);
+      setMovies([]);
+      console.error(e);
+    }
   }
-
+  
   return (
     <div>
       {loading &&
         <div>Carregando...</div>
       }
       
-      {!loading &&
+      {!loading && movies.length > 0 &&
         <>
           <div>Total de Filmes: {movies.length}</div><br />      
           <div className="grid grid-cols-6 gap-3">
@@ -46,6 +57,10 @@ const App = () => {
             ))}
           </div>
         </>
+      }
+
+      {!loading && movies.length === 0 &&
+        <div>Tente novamente mais tarde.</div>
       }
     </div>
   );
