@@ -8,6 +8,7 @@ const App = () => {
     loadMovies();
   }, []);
 
+  /*
   const loadMovies = () => {
     fetch('https://api.b7web.com.br/cinema/')
       .then((response) => {
@@ -16,6 +17,12 @@ const App = () => {
       .then((json) => {
         setMovies(json);
       });
+  }
+  */
+  const loadMovies = async () => {
+    let response = await fetch('https://api.b7web.com.br/cinema/');
+    let json = await response.json();
+    setMovies(json);
   }
 
   return (
