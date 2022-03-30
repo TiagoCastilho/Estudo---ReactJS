@@ -3,6 +3,7 @@ import { Movie } from "./types/Movie";
 
 const App = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     loadMovies();
@@ -20,14 +21,20 @@ const App = () => {
   }
   */
   const loadMovies = async () => {
+    setLoading(true);
     let response = await fetch('https://api.b7web.com.br/cinema/');
     let json = await response.json();
+    setLoading(false);
     setMovies(json);
   }
 
   return (
     <div>
       <p>Total de Filmes: {movies.length}</p><br />
+
+      {loading &&
+        <div>Carregando...</div>
+      }
       
       <div className="grid grid-cols-6 gap-3">
         {movies.map((item, index) => (
