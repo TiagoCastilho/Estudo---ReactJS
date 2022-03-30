@@ -30,20 +30,23 @@ const App = () => {
 
   return (
     <div>
-      <p>Total de Filmes: {movies.length}</p><br />
-
       {loading &&
         <div>Carregando...</div>
       }
       
-      <div className="grid grid-cols-6 gap-3">
-        {movies.map((item, index) => (
-          <div>
-            <img src={item.avatar} className="w-32 block" />
-            {item.titulo}
+      {!loading &&
+        <>
+          <div>Total de Filmes: {movies.length}</div><br />      
+          <div className="grid grid-cols-6 gap-3">
+            {movies.map((item, index) => (
+              <div>
+                <img src={item.avatar} className="w-32 block" />
+                {item.titulo}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      }
     </div>
   );
 }
