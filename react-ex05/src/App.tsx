@@ -1,15 +1,36 @@
-import { useContagem } from './reduces/contagem';
+import { ChangeEvent, useState } from 'react';
+import { usePeopleList } from './reduces/PeopleList';
 
 const App = () => {
-  const [contagem, contagemDispatch] = useContagem();
+  const [list, dispatch] = usePeopleList();
+  const [ nameInput, setNameInput] = useState('');
+
+  const handleAddButton = () => {
+    if(nameInput) {
+      dispatch({
+        type: 'ADD',
+        payload: {
+          name: nameInput
+        }
+      });
+      setNameInput('');
+    }
+  }
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNameInput(e.target.value);
+  }
 
   return (
     <div className="p-5">
-      Contagem: {contagem.count}
+      <input className='border-2' type="text" value={nameInput} onChange={handleInputChange} />
+      <button onClick={handleAddButton}>Adicionar</button>
       <hr/>
-      <button className='p-3' onClick={()=>contagemDispatch({type: 'ADD'})}>Adicionar</button>
-      <button className='p-3' onClick={()=>contagemDispatch({type: 'DEL'})}>Remover</button>
-      <button className='p-3' onClick={()=>contagemDispatch({type: 'RESET'})}>Resetar</button>
+      Lista de pessoas:
+      <ul>
+        {list.map((item, index) => (
+          <li key={index}>{item.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
