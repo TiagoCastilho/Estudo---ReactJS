@@ -4,11 +4,12 @@ export const Container = styled.div`
     width: 200px;
     height: 50px;
     display: flex;
-    background-color: #1550FF;
+    background-color: #ddd674;
     border-radius: 10px;
     cursor: pointer;
     opacity: 1;
     transition: all ease 0.3s;
+    box-shadow: 1px 1px 1px #CCC;
 
     &:hover {
         opacity: 0.8;
@@ -30,7 +31,9 @@ export const Icon = styled.img`
 
 export const Label = styled.div`
     height: inherit;
+    font-weight: bold;
     color: #FFF;
+    text-shadow: 1px 1px 1px #AAA;
     display: flex;
     justify-content: center;
     align-items: center;

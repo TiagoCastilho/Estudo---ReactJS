@@ -5,7 +5,7 @@ export const Container = styled.div`
     max-width: 750px;
     margin: auto;
     display: flex;
-    padding: 50px 0;
+    padding: 100px 0;
 
     @media (max-width: 750px) {
         flex-direction: column;
@@ -19,17 +19,17 @@ export const Info = styled.div`
 
     @media (max-width: 750px) {
         margin-bottom: 50px;
-        align-itens: center;
+        align-items: center;
     }
 `;
 
 export const LogoLink = styled.a`
     display: block;
+    margin-right: 10px;
 `;
 
 export const InfoArea = styled.div`
     width: 100%;
-    margin: 10px 0;
 
     @media (max-width: 750px) {
         display: flex;
@@ -47,4 +47,11 @@ export const GridArea = styled.div`
         justify-content: center;
         margin: 0 20px
     }
+`;
+
+export const Grid = styled.div`
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 `;
