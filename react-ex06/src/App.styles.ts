@@ -25,11 +25,12 @@ export const Info = styled.div`
 
 export const LogoLink = styled.a`
     display: block;
-    margin-right: 10px;
+    margin: 0 10px;
 `;
 
 export const InfoArea = styled.div`
     width: 100%;
+    margin: 0 10px;
 
     @media (max-width: 750px) {
         display: flex;
@@ -50,8 +51,12 @@ export const GridArea = styled.div`
 `;
 
 export const Grid = styled.div`
-    width: 400px;
+    width: 430px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+
+    @media (max-width: 425px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 `;

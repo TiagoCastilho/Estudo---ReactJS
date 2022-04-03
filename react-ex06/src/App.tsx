@@ -30,6 +30,48 @@ const App = () => {
     return() => clearInterval(timer);
   }, [playing, timeElapsed]);
 
+  // Verificações
+  useEffect(() => {
+    if(shownCount === 2) {
+      let opened = gridItems.filter(item => item.shown === true);
+      if(opened.length === 2) {
+        
+        if(opened[0].item === opened[1].item) {
+          // Verificação 1
+          let tmpGrid = [...gridItems];
+          for(let i in tmpGrid) {
+            if(tmpGrid[i].shown) {
+              tmpGrid[i].permanentShown = true;
+              tmpGrid[i].shown = false;
+            }
+          }
+          setGridItems(tmpGrid);
+          setShownCount(0);
+        } else {
+          // Verificação 2
+          setTimeout(() => {
+            let tmpGrid = [...gridItems];
+            for(let i in tmpGrid) {
+              tmpGrid[i].shown = false;
+            }
+            setGridItems(tmpGrid);
+            setShownCount(0);
+          }, 1000);
+        }
+      
+
+        setMoveCount(moveCount => moveCount + 1);
+      }
+    }
+  }, [shownCount, gridItems]);
+
+  // Verificar fim do jogo
+  useEffect(() => {
+    if(moveCount > 0 && gridItems.every(item => item.permanentShown === true)) {
+      setPlaying(false);
+    }
+  }, [moveCount, gridItems]);
+
   const resetAndCreateGrid = () => {
     // Passo 1 - Resetar o Jogo
     setTimeElapsed(0);
@@ -65,19 +107,28 @@ const App = () => {
   }
 
   const handleItemClick = (index: number) => {
+    if(playing && index !== null && shownCount < 2) {
+      let tmpGrid = [...gridItems];
 
+      if(tmpGrid[index].permanentShown === false && tmpGrid[index].shown === false) {
+        tmpGrid[index].shown = true;
+        setShownCount(shownCount + 1);
+      }
+
+      setGridItems(tmpGrid);
+    }
   }
 
   return (
     <C.Container>
       <C.Info>
         <C.LogoLink href="">
-          <img src={logoImage} width='350' alt="" />
+          <img src={logoImage} width='100%' alt="" />
         </C.LogoLink>
 
         <C.InfoArea>
           <InfoItem label='Tempo' value={formatTimeElapsed(timeElapsed)} />
-          <InfoItem label='Movimentos' value='0' />
+          <InfoItem label='Movimentos' value={moveCount.toString()} />
         </C.InfoArea>
 
         <Butoon label='Reiniciar' icon={RestartIcon} onClick={resetAndCreateGrid}/>

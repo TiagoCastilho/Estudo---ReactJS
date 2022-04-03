@@ -6,8 +6,8 @@ type ContainerProps = {
 
 export const Container = styled.div<ContainerProps>`
     background-color: ${props => props.showBackground === true ? '#81c1fd' : '#d1d1f8'};
-    height: 118px;
-    border-radius: 20px;
+    height: 110px;
+    border-radius: 10px;
     box-shadow: 1px 1px 2px #CCC;
     display: flex;
     justify-content: center;
