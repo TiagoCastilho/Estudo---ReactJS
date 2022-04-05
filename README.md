@@ -26,6 +26,6 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 <div>
 <h3 align="center">Exercício 4 - Inclusão da biblioteca axios para requisições e melhorias no código do projeto</h3>
 <div align="center">
-<img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex04/src/assets/como%20ficou1.png">
+<img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex04/src/assets/como%20ficou1.PNG">
 </div>
 <hr>
