@@ -24,7 +24,7 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 </div>
 <hr>
 <div>
-<h3 align="center">Exercício 4 - Inclusão da biblioteca axios para requisições e melhorias no código do projeto</h3>
+<h3 align="center">Exercício 4 - Inclusão da biblioteca axios para requisições e melhorias no código</h3>
 <div align="center">
 <img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex04/src/assets/como%20ficou1.PNG">
 </div>
@@ -33,5 +33,11 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 <h3 align="center">Exercício 5 - Utilização do Reducer</h3>
 <div align="center">
 <img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex05/src/assets/como%20ficou1.PNG">
+</div>
+<hr>
+<div>
+<h3 align="center">Exercício 6 - Jogo da Memória</h3>
+<div align="center">
+<img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex06/src/assets/como%20ficou1.png">
 </div>
 <hr>
