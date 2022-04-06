@@ -1,7 +1,7 @@
-import { Album } from '../types/Album';
+import { AlbumType } from '../types/AlbumType';
 
 type Props = {
-    data: Album
+    data: AlbumType
 }
 
 export const AlbumItem = ({ data }: Props) => {
