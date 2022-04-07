@@ -44,12 +44,12 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 <div>
 <h3 align="center">Exercício 7 - Rotas com React Router (v6)</h3>
 <div align="center">
-<img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex07/src/assets/como%20ficou1.png">
+<img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex07/assets/como%20ficou1.png">
 </div>
 <hr>
 <div>
 <h3 align="center">Exercício 8 - Utilizando Album e Photos do JSONPlaceholder</h3>
 <div align="center">
-<img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex08/src/assets/como%20ficou3.png">
+<img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex08/assets/como%20ficou3.png">
 </div>
 <hr>
