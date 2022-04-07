@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { api } from "../api/PhotoApi";
+import { api } from "../api/api";
 import { PhotoType } from "../types/PhotoType";
 
 export const Photo = () => {

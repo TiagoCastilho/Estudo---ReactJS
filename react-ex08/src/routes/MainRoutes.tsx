@@ -9,7 +9,7 @@ export const MainRoutes = () => {
     return useRoutes([
         { path: '/', element: <AlbumList />},
         { path: '/album/:id', element: <SelectedAlbum />},
-        { path: '/album/:id/photo/:id', element: <Photo />},
+        { path: '/photo/:id', element: <Photo />},
         { path: '*', element: <NotFound />},
         ]);
     }

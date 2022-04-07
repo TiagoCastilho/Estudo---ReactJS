@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AlbumType } from '../types/AlbumType';
-import { AlbumItem } from "../components/AlbumItem";
-import { api } from "../api/AlbumApi";
+import { AlbumItem } from "../components/AlbumItem/index";
+import { api } from "../api/api";
 
 
 export const AlbumList = () => {
@@ -15,7 +15,7 @@ export const AlbumList = () => {
     const loadAlbums = async () => {
         try {
         setLoading(true);      
-        let json = await api.getAllAlbums();
+        let json = await api.getAlbums();
         setLoading(false);
         setAlbums(json);
         } catch(e) {
@@ -32,17 +32,14 @@ export const AlbumList = () => {
             {!loading && albums.length > 0 &&
                 <div>
                 {albums.map((item, index) => (
-                    <AlbumItem data={item} />
+                    <AlbumItem
+                        key={index}
+                        id={item.id}
+                        title={item.title}
+                    />
                 ))}
                 </div>
             }  
-
-            {!loading &&
-                <div>
-                Ocorreu um erro em sua requisição.<br/>
-                Por favor, tente novamente mais tarde.
-                </div>
-            }
         </div>
     );
 }
