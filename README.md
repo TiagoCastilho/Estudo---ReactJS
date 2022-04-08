@@ -11,7 +11,7 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 </div>
 <hr>
 <div>
-<h3 align="center">Exercício 2 - Criando Formulário Simples</h3>
+<h3 align="center">Exercício 2 - Calculadora de IMC</h3>
 <a href="https://tiagocastilho.github.io/Estudo---ReactJS/react-ex02/build/index.html"><p align="center">👉 Acesse a página clicando aqui! 👈</p></a>
 <div align="center">
 <img height="500em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex02/src/assets/como%20ficou1.png">
@@ -37,6 +37,7 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 <hr>
 <div>
 <h3 align="center">Exercício 6 - Jogo da Memória</h3>
+<a href="https://tiagocastilho.github.io/Estudo---ReactJS/react-ex06/build/index.html"><p align="center">👉 Acesse a página clicando aqui! 👈</p></a>
 <div align="center">
 <img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex06/src/assets/como%20ficou1.png">
 </div>
