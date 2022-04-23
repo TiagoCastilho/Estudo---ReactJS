@@ -26,6 +26,8 @@ const SignIn = () => {
             doLogin(json.token, remember);
             window.location.href = '/';
         }
+
+        setDisabled(false);
     }
 
     return (
