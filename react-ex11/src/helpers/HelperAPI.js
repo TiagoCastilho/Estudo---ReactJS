@@ -3,7 +3,7 @@ const HelperAPI = {
     login:async (email, password) => {
 
 
-        return {};
+        return {error: 'Funcionalidade incompleta'};
     }
 };
 
