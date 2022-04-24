@@ -57,7 +57,15 @@ const HelperAPI = {
         );
 
         return json;
+    },
+
+    getStates:async () => {
+        const json = await apiFetchGet(
+            '/states'
+        );
+        return json.states;
     }
+
 };
 
 export default () => HelperAPI;
