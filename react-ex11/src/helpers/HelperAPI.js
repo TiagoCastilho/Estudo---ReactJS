@@ -59,6 +59,14 @@ const HelperAPI = {
         return json;
     },
 
+    register:async (name, email, password, stateLocal) => {
+        const json = await apiFetchPost(
+            '/user/signup',
+            {name, password, email, state:stateLocal}
+        );
+        return json;
+    },
+
     getStates:async () => {
         const json = await apiFetchGet(
             '/states'

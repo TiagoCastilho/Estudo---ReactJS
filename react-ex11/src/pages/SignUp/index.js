@@ -30,15 +30,22 @@ const SignIn = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setDisabled(true);
-        /*
-        const json = await api.login(email, password);
+        setError('');
+
+        if(password !== confirmPassword) {
+            setError('Senhas não coincidem');
+            setDisabled(false);
+            return;
+        }
+
+        const json = await api.register(name, email, password, stateLocal);
 
         if(json.error) {
             setError(json.error);
         } else {
-            doLogin(json.token, remember);
+            doLogin(json.token);
             window.location.href = '/';
-        }*/
+        }
 
         setDisabled(false);
     }
