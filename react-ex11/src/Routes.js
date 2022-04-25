@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+import RequireAuth from "./helpers/RequireAuth";
+
 import Home from './pages/Home';
 import About from './pages/About';
 import SignIn from './pages/SignIn';
@@ -12,10 +14,19 @@ export default () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={
+                <RequireAuth>
+                    <About />
+                </RequireAuth>
+            } />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/ad/:id" element={<AdPage />} />
+            <Route path="/post-an-ad" element={
+                <RequireAuth>
+                    <About />
+                </RequireAuth>    
+            } />
             <Route path="*" element={<NotFound />} />
 
         </Routes>

@@ -25,7 +25,7 @@ const SignIn = () => {
             setStateList(slist);
         }
         getStates();
-    }, []);
+    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
