@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 import 'react-slideshow-image/dist/styles.css';
-import { AdPageInArea, Fake } from './styled';
+import { AdPageInArea, Fake, OthersArea, BreadChumb } from './styled';
 import useApi from '../../helpers/HelperAPI';
 
 import { PageContainer } from "../../components/MainComponents";
+import AdItem from "../../components/partials/AdItem";
 
 const AdPage = () => {
     const api = useApi();
@@ -36,6 +37,18 @@ const AdPage = () => {
 
     return (
         <PageContainer>
+            {adInfo.category &&
+                <BreadChumb>
+                    Você está aqui: 
+                    <Link to="/">Home</Link>
+                    /
+                    <Link to={`/ads?state=${adInfo.stateName}`}>{adInfo.stateName}</Link>
+                    /
+                    <Link to={`/ads?state=${adInfo.stateName}&cat=${adInfo.category.slug}`}>{adInfo.category.name}</Link>
+                    / {adInfo.title}
+                </BreadChumb>
+            }
+
             <AdPageInArea>
                 <div className="leftSide">
                     <div className="box">
@@ -94,8 +107,20 @@ const AdPage = () => {
                             </div>
                         </>
                     }                    
-                </div>
+                </div>                
             </AdPageInArea>
+            <OthersArea>
+                {adInfo.others &&
+                    <>
+                        <h2>Outras ofertas do vendedor</h2>
+                        <div className="list">
+                            {adInfo.others.map((i, k)=>
+                                <AdItem key={k} data={i} />
+                            )}
+                        </div>
+                    </>
+                }
+            </OthersArea>
         </PageContainer>
     );
 }
