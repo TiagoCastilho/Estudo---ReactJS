@@ -1,9 +1,25 @@
 import styled from 'styled-components';
 
+export const Fake = styled.div`
+    background-color: #DDD;
+    height: ${props=>props.height || 20}px;
+`;
+
 export const AdPageInArea = styled.div`
 display: flex;
+margin-top: 20px;
 
-.leftside {
+.box {
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #999;
+    margin-bottom: 20px;
+}
+.box--padding {
+    padding: 10px;
+}
+
+.leftSide {
     flex: 1;
     margin-right: 20px;
 
@@ -12,9 +28,10 @@ display: flex;
     }
 
     .adInfo {
+        padding: 10px;
 
         .adName {
-
+            margin-bottom: 20px;
         }
 
         .adDescription {
@@ -23,7 +40,7 @@ display: flex;
     }
 }
 
-.rightside {
+.rightSide {
     width: 250px;
 }
 `;
