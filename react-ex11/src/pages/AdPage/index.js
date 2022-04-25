@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Slide } from "react-slideshow-image";
+import 'react-slideshow-image/dist/styles.css';
 import { AdPageInArea, Fake } from './styled';
 import useApi from '../../helpers/HelperAPI';
 
@@ -38,7 +40,16 @@ const AdPage = () => {
                 <div className="leftSide">
                     <div className="box">
                         <div className="adImage">
-                            {loading && <Fake height={300} />}                           
+                            {loading && <Fake height={300} />}   
+                            {adInfo.images &&
+                                <Slide>
+                                    {adInfo.images.map((img, k) => 
+                                        <div key={k} className="each-slide">
+                                            <img src={img} alt="" />
+                                        </div>
+                                    )}
+                                </Slide>
+                            }
                         </div>
                         <div className="adInfo">
                             <div className="adName">
