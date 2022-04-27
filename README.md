@@ -32,7 +32,7 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 <div>
 <h3 align="center">Exercício 5 - Utilização do Reducer</h3>
 <div align="center">
-<img height="300em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex05/src/assets/como%20ficou1.PNG">
+<img height="200em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex05/src/assets/como%20ficou1.PNG">
 </div>
 <hr>
 <div>
