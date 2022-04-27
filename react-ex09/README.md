@@ -2,7 +2,7 @@
 Exercícios e Projetos
 <br/>
 <h1 align="center">
-    Exercício 9 - ContextAPI
+    Exercício 9 - ContextAPI na prática
 </h1>
 
 ## Imagem do Projeto
