@@ -57,7 +57,7 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 <div>
 <h3 align="center">Exercício 9 - ContextAPI na prática</h3>
 <div align="center">
-<img height="150em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex09/src/Como%20ficou1.png">
+<img height="250em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex09/src/Como%20ficou1.png">
 </div>
 <hr>
 <div>
