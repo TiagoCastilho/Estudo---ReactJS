@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import bg from'./assets/bg.png';
 
 export const Container = styled.div`
 display: flex;
@@ -17,6 +18,7 @@ flex-direction: column;
 
 export const PageBody = styled.div`
 display: flex;
-background-color: #0000FF;
+background-color: #00980D;
+background: url(${bg});
 flex: 1;
 `;

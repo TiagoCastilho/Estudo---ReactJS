@@ -11,7 +11,9 @@ import store from './assets/store.png';
 import order from './assets/order.png';
 import profile from './assets/profile.png';
 
+import PrivateRoute from './components/PrivateRoute';
 import MenuItem from './components/MenuItem';
+import Cart from './components/Cart';
 
 export default () => {
     const name = useSelector(state => state.user.name);
@@ -29,11 +31,18 @@ export default () => {
                         <Route exact path="/">
                             <HomeScreen />
                         </Route>
+                        <PrivateRoute path="/orders">
+                            <div>Tela de Pedidos</div>
+                        </PrivateRoute>
+                        <PrivateRoute path="/profile">
+                            <div>Tela de Perfil</div>
+                        </PrivateRoute>
                         <Route path="/tela2/:nome">
                             <Tela2Screen />
                         </Route>
                     </Switch>
                 </PageBody>
+                <Cart />
             </Container>
         </BrowserRouter>
     );
