@@ -5,4 +5,6 @@ export const Container = styled.div`
     padding: 15px;
 `;
 
-export const Titulo = styled.h1``;
+export const CategoryArea = styled.div``;
+
+export const CategoryList = styled.div``;
