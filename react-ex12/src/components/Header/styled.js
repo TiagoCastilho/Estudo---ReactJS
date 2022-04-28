@@ -25,7 +25,13 @@ export const SearchInput = styled.input`
     background-position: 11px center;
     width: ${props=>props.active ? 300 : 0}px;
     height: 50px;
+    font-size: 15px;
     outline: 0;
     padding-left: 50px;
     transition: all ease 0.4s;
+    cursor: pointer;
+
+    &:focus {
+        cursor: text;
+    }
 `;
