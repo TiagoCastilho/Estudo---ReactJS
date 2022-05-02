@@ -21,4 +21,5 @@ display: flex;
 background-color: #00980D;
 background: url(${bg});
 flex: 1;
+overflow-y: auto;
 `;
