@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { Container, CategoryArea, CategoryList } from './styled';
 
+import FoodAndRestImg from '../../assets/food-and-restaurant.png';
+
 import api from '../../api';
 
 import Header from '../../components/Header';
@@ -35,11 +37,11 @@ export default () => {
                        <CategoryItem 
                        data={{
                            id:0, 
-                           title:'Todas as categorias', 
-                           image:'/assets/food-and-restaurant.png'
+                           title:'Todas as categorias',
+                           image: FoodAndRestImg
                         }}
                         activeCategory={activeCategory}
-                       />
+                        />
                        {categories.map((item, index)=>(
                             <CategoryItem 
                                 key={index} 
