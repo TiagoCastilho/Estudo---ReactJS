@@ -3,14 +3,14 @@ import { Container, Logo, SearchInput } from './styled';
 import logo from "../../assets/logo.png"
 
 const Header = ( {search, onSearch} ) => {
-    const [inputActive, setInputActive] = useState(search == '' ? false : true);
+    const [inputActive, setInputActive] = useState(search === '' ? false : true);
 
     const handleInputFocus = () => {
         setInputActive(true);
     }
 
     const handleInputBlur = () => {
-        if(search == '') {
+        if(search === '') {
             setInputActive(false);
         }
     }
