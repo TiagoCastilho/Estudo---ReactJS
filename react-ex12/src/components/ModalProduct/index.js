@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ProductIngredients, ProductName } from "../ProductItem/styled";
+import { useDispatch } from "react-redux";
+
 import { 
     Container,
     ProductArea,
@@ -20,6 +21,7 @@ import minusImg from "../../assets/minus.png";
 import plusImg from "../../assets/plus.png";
 
 export default ({ data, setStatus }) => {
+    const dispatch = useDispatch();
     const [qt, setQt] = useState(1);
 
     useEffect(() => {
@@ -38,6 +40,15 @@ export default ({ data, setStatus }) => {
 
     const handlePlusQt = () => {
         setQt(qt + 1);
+    }
+
+    const handleAddToCart = () => {
+        dispatch({
+            type: 'ADD_PRODUCT',
+            payload: {data,qt}
+        })
+
+        setStatus(false);
     }
 
     return (
@@ -63,7 +74,7 @@ export default ({ data, setStatus }) => {
             </ProductArea>
             <ProductButtons>
                 <ProductButton small={true} onClick={handleCancelButton}>Cancelar</ProductButton>
-                <ProductButton>Adicionar ao Carrinho</ProductButton>
+                <ProductButton onClick={handleAddToCart}>Adicionar ao Carrinho</ProductButton>
             </ProductButtons>
         </Container>
     );
