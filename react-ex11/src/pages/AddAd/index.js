@@ -1,14 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
-import MaskedInput from 'react-text-mask';
-import createNumberMask from 'text-mask-addons/dist/createNumberMask';
-import { SignInArea } from './styled';
-import useApi from '../../helpers/HelperAPI';
+import { useNavigate } from "react-router-dom";
+import MaskedInput from "react-text-mask";
+import createNumberMask from "text-mask-addons/dist/createNumberMask";
+import { SignInArea } from "./styled";
+import useApi from "../../helpers/HelperAPI";
 
 import { PageContainer, PageTitle, ErrorMessage } from "../../components/MainComponents";
 
 const AddAd = () => {
     const api = useApi();
     const fileField = useRef();
+    const navigate = useNavigate();
 
     const [categories, setCategories] = useState([]);
 
@@ -32,17 +34,40 @@ const AddAd = () => {
         e.preventDefault();
         setDisabled(true);
         setError('');
-
-        /*
-        const json = await api.login(email, password);
-
-        if(json.error) {
-            setError(json.error);
-        } else {
-            doLogin(json.token, rememberPassword);
-            window.location.href = '/';
+        let errors = [];
+        
+        if(!title.trim()) {
+            errors.push('Sem título');
         }
-        */
+        if(!category) {
+            errors.push('Sem categoria');
+        }
+        if(errors.length === 0) {
+            const fData = new FormData();
+            fData.append('title', title);
+            fData.append('price', price);
+            fData.append('priceneg', priceNegotiable);
+            fData.append('desc', desc);
+            fData.append('cat', category);
+
+            if(fileField.current.files.length > 0) {
+                for(let i=0;i<fileField.current.files.length;i++) {
+                    fData.append('img', fileField.current.files[i]);
+                }
+            }
+
+            const json = await api.addAd(fData);
+
+            if(!json.error) {
+                navigate.push(`/ad/${json.id}`);
+                return;
+            } else {
+                setError(json.error);
+            }
+
+        } else {
+            setError(errors.join("\n"));
+        }
 
         setDisabled(false);
     }
