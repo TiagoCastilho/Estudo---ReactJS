@@ -10,6 +10,7 @@ import SignUp from './pages/SignUp';
 import AdPage from './pages/AdPage';
 import AddAd from './pages/AddAd';
 import NotFound from './pages/NotFound';
+import Ads from './pages/Ads';
 
 export default () => {
     return (
@@ -28,6 +29,7 @@ export default () => {
                     <AddAd />
                 </RequireAuth>    
             } />
+            <Route path="/ads" element={<Ads />} />
             <Route path="*" element={<NotFound />} />
 
         </Routes>
