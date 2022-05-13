@@ -72,3 +72,9 @@ Estou mantendo fiel ao desenvolvimento para que possa observar minha evolução.
 <img height="150em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex08/assets/Como%20ficou1.png">
 </div>
 <hr>
+<div>
+<h3 align="center">Exercício 12 - DevsFood</h3>
+<div align="center">
+<img height="150em" src="https://github.com/TiagoCastilho/Estudo---ReactJS/blob/main/react-ex12/assets/Como%20ficou1.png">
+</div>
+<hr>
