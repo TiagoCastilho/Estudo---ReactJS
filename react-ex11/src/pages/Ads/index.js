@@ -4,10 +4,10 @@ import { PageArea } from './styled';
 import useApi from '../../helpers/HelperAPI';
 
 import { PageContainer } from "../../components/MainComponents";
-import AdItem from "../../components/partials/AdItem";
 
-const SignIn = () => {
+const AdsPageArea = () => {
     const api = useApi();
+    const history = useNavigate();
 
     const useQueryString = () => {
         return new URLSearchParams( useLocation().search );
@@ -21,6 +21,23 @@ const SignIn = () => {
     const [stateList, setStateList] = useState([]);
     const [categories, setCategories] = useState([]);
     const [adList, setAdList] = useState([]);
+
+    useEffect(() => {
+        let queryString = [];
+        if(q) {
+            queryString.push(`q=${q}`);
+        }
+        if(cat) {
+            queryString.push(`cat=${cat}`);
+        }
+        if(state) {
+            queryString.push(`state=${state}`);
+        }
+
+        history.replace({
+            search:`?${queryString.join('&')}`
+        });
+    }, [q, cat, state]);
 
     useEffect(() => {
         const getStates = async () => {
@@ -59,10 +76,11 @@ const SignIn = () => {
                             name="q" 
                             placeholder="O que você procura?"
                             value={q}
+                            onChange={e=>setQ(e.target.value)}
                         />
 
                         <div className="filterName">Estado:</div>
-                        <select name="state" value={state}>
+                        <select name="state" value={state} onChange={e=>setState(e.target.value)}>
                             <option></option>
                             {stateList.map((i, k)=>
                                 <option key={k} value={i.name}>{i.name}</option>
@@ -72,7 +90,11 @@ const SignIn = () => {
                         <div className="filterName">Categoria:</div>
                         <ul>
                             {categories.map((i, k)=>
-                                <li key={k} className={cat==i.slug?'categoryItem active':'categoryItem'}>
+                                <li 
+                                key={k} 
+                                className={cat==i.slug?'categoryItem active':'categoryItem'}
+                                onClick={()=>setCat(i.slug)}
+                                >
                                     <img src={i.img} alt="" />
                                     <span>{i.name}</span>
                                 </li>
@@ -88,4 +110,4 @@ const SignIn = () => {
     );
 }
 
-export default SignIn;
+export default AdsPageArea;
